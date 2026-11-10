@@ -5,21 +5,33 @@ import qs.config
 Item {
     id: root
 
-    property string format: "hh:mm"
+    property string timeFormat: "hh:mm"
+    property string dateFormat: "ddd d"
 
-        implicitWidth: label.implicitWidth
-        implicitHeight: label.implicitHeight
+    implicitWidth: label.implicitWidth
+    implicitHeight: label.implicitHeight
 
-        SystemClock {
-            id: clock
-            precision: SystemClock.Minutes
+    SystemClock {
+        id: clock
+        precision: SystemClock.Minutes
+    }
+
+    Row {
+        id: row
+        anchors.centerIn: parent
+        spacing: 10
+
+        Text {
+            color: Theme.text
+            text: Qt.formatDateTime(clock.date, root.timeFormat)
+            font { pixelSize: Theme.fontSize; family: Theme.fontFamily; weight: 600; }
         }
 
         Text {
-            id: label
-            anchors.centerIn: parent
-            text: Qt.formatDateTime(clock.date, root.format)
-            color: Theme.text
+            color: Theme.textDim
+            text: Qt.formatDateTime(clock.date, root.dateFormat)
             font { pixelSize: Theme.fontSize; family: Theme.fontFamily; weight: 500; }
         }
     }
+
+}
