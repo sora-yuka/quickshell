@@ -19,6 +19,14 @@ PanelWindow {
         id: container
         anchors.fill: parent
 
+        Workspaces {
+            anchors {
+                left: parent.left;
+                leftMargin: 20;
+                verticalCenter: parent.verticalCenter
+            }
+        }
+
         Rectangle {
             id: pill
             anchors {
@@ -28,7 +36,7 @@ PanelWindow {
             }
             color: Theme.bg
             radius: Theme.barRadius
-            width: clock.implicitWidth + 60
+            width: clock.implicitWidth + 140
             height: Theme.barHeight + Theme.barRadius
 
             Clock {
@@ -51,6 +59,14 @@ PanelWindow {
             color: Theme.bg
             radius: Theme.barRadius
             anchors { left: pill.right; top: parent.top; }
+        }
+
+        LayoutIndicator {
+            anchors {
+                right: parent.right
+                rightMargin: 20
+                verticalCenter: parent.verticalCenter
+            }
         }
     }
 }
