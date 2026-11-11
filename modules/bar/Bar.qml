@@ -36,7 +36,7 @@ PanelWindow {
             }
             color: Theme.bg
             radius: Theme.barRadius
-            width: clock.implicitWidth + 140
+            width: clock.implicitWidth + 80
             height: Theme.barHeight + Theme.barRadius
 
             Clock {

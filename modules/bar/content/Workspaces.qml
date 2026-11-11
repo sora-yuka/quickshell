@@ -7,7 +7,7 @@ Row {
     id: root
     spacing: Theme.wsSpacing
 
-    property int minCount: 4
+    property int minCount: 2
     property var workspaces: []
 
     // Always 5 dots for workspace indicator.
@@ -64,12 +64,14 @@ Row {
                 && ws.active_window_id !== null && ws.active_window_id !== undefined
 
             implicitHeight: Theme.wsSize
-            implicitWidth: active ? Theme.wsSize * 3 : Theme.wsSize
-            radius: height / 2
-            color: active ? Theme.wsActive : occupied ? Theme.wsOccupied : Theme.wsEmpty
+            implicitWidth: Theme.wsSize
+            border { color: Theme.wsBorder; width: 3; }
 
-            Behavior on implicitWidth { NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
-            Behavior on color { ColorAnimation { duration: 200 } }
+            radius: height / 2
+                color: dot.active ? Theme.wsBorder : Theme.wsEmpty
+
+            Behavior on color { ColorAnimation { duration: 100; } }
+            Behavior on implicitWidth { NumberAnimation { duration: 100; easing.type: Easing.OutCubic } }
 
             MouseArea {
                 anchors { fill: parent; margins: -3; }

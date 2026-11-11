@@ -8,8 +8,8 @@ Item {
     property string timeFormat: "hh:mm"
     property string dateFormat: "ddd d"
 
-    implicitWidth: label.implicitWidth
-    implicitHeight: label.implicitHeight
+    implicitWidth: row.implicitWidth
+    implicitHeight: row.implicitHeight
 
     SystemClock {
         id: clock

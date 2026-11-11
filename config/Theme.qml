@@ -20,9 +20,8 @@ Singleton {
     readonly property int barRadius: 16
 
     // workspace indicator
-    readonly property color wsActive: "#f5f5f5"
-    readonly property color wsOccupied: "#8a8a8a"
-    readonly property color wsEmpty: "#3a3a3a"
-    readonly property int wsSize: 8
+    readonly property color wsBorder: "#BAC2DE"
+    readonly property color wsEmpty: "#2b2b2b"
+    readonly property int wsSize: 12
     readonly property int wsSpacing: 6
 }
