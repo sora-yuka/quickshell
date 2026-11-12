@@ -40,7 +40,7 @@ Singleton {
     readonly property int topMargin: 200
     readonly property int rowHeight: 48
     readonly property int rowRadius: 6
-    readonly property int rowPadding: 4
+    readonly property int rowPadding: 8
     readonly property int rowSpacing: 14
     readonly property int iconSize: 32
 }
