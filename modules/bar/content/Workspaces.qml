@@ -64,11 +64,11 @@ Row {
                 && ws.active_window_id !== null && ws.active_window_id !== undefined
 
             implicitHeight: Theme.wsSize
-            implicitWidth: Theme.wsSize
-            border { color: Theme.wsBorder; width: 3; }
+            implicitWidth: active ? Theme.wsSize * 2 : Theme.wsSize
+            border { color: Theme.dotBorder; width: 2; }
 
             radius: height / 2
-                color: dot.active ? Theme.wsBorder : Theme.wsEmpty
+                color: dot.active ? Theme.dotBorder : Theme.dotInner
 
             Behavior on color { ColorAnimation { duration: 100; } }
             Behavior on implicitWidth { NumberAnimation { duration: 100; easing.type: Easing.OutCubic } }
